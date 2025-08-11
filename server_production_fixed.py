@@ -324,19 +324,14 @@ async def main():
             read_stream,
             write_stream,
             InitializationOptions(
-                server_name="CrisisSim",
-                server_version="1.0.0",
-                
-
-capabilities = server.get_capabilities(
-    notification_options=notification_options,
-    experimental_capabilities=None
-)
-
-)
-
-            ),
-        )
+    server_name="CrisisSim",
+    server_version="1.0.0",
+    capabilities=server.get_capabilities(
+        notification_options=notification_options,
+        experimental_capabilities=None
+    )
+),
+        )            
 
 if __name__ == "__main__":
     try:
