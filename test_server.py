@@ -18,7 +18,7 @@ async def test_mcp_server():
     
     # Start the server process
     process = subprocess.Popen(
-        [sys.executable, "server.py"],
+        [sys.executable, "server_production_fixed.py"],
         stdin=subprocess.PIPE,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
