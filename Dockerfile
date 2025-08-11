@@ -36,4 +36,4 @@ HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
     CMD python -c "import sys; sys.exit(0)" || exit 1
 
 # Default command to run the hybrid server
-CMD ["python", "server_hybrid.py"]
+CMD ["python", "server.py"]
