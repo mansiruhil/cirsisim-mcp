@@ -14,6 +14,8 @@ import openai
 from mcp.server import Server
 from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
+from types import SimpleNamespace
+
 
 from mcp.types import (
     CallToolRequest,
@@ -312,6 +314,9 @@ async def main():
     
     # Start cleanup task in background
     asyncio.create_task(periodic_cleanup())
+
+    from types import SimpleNamespace
+    notification_options = SimpleNamespace(tools_changed=False)
     
     # Run the server with simplified capabilities
     async with stdio_server() as (read_stream, write_stream):
@@ -321,9 +326,13 @@ async def main():
             InitializationOptions(
                 server_name="CrisisSim",
                 server_version="1.0.0",
-                capabilities = server.get_capabilities(
-    notification_options=None,
+                
+
+capabilities = server.get_capabilities(
+    notification_options=notification_options,
     experimental_capabilities=None
+)
+
 )
 
             ),
