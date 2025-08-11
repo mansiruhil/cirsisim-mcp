@@ -14,7 +14,7 @@ import openai
 from mcp.server import Server
 from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
-from mcp.server.models import NotificationOptions, ExperimentalCapabilities
+
 from mcp.types import (
     CallToolRequest,
     CallToolResult,
@@ -322,9 +322,10 @@ async def main():
                 server_name="CrisisSim",
                 server_version="1.0.0",
                 capabilities = server.get_capabilities(
-        notification_options=NotificationOptions(),
-    experimental_capabilities=ExperimentalCapabilities()
+    notification_options=None,
+    experimental_capabilities=None
 )
+
             ),
         )
 
