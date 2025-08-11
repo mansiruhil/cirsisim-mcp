@@ -335,13 +335,9 @@ async def main():
 
 if __name__ == "__main__":
     try:
-        import uvicorn
-        uvicorn.run(
-            "server_production_fixed:app", 
-            host="0.0.0.0", 
-            port=int(os.getenv("PORT", 8000)),
-            log_level="info"
-        )
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        logger.info("Server stopped by user")
     except Exception as e:
         logger.error(f"Server error: {e}")
         raise
