@@ -15,7 +15,7 @@ def test_project_structure():
     
     required_files = [
         "manifest.json",
-        "server.py", 
+        "server_production_fixed.py", 
         "requirements.txt",
         "README.md",
         "demo.py",
